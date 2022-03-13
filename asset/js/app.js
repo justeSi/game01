@@ -72,7 +72,7 @@ document.querySelector('.start').onclick = () => {
                     clearInterval(timer);
 
                 }
-            } else {
+            } else if (arr.indexOf(parseInt(boxy.id)) !== -1) {
                 document.querySelector('.msg').innerText = `Wrong number. You need to find ${Math.min(...arr)}`;
             }
         });
