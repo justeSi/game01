@@ -120,7 +120,25 @@ button {
         flex-direction: column;
     }
     .small-box {
-        padding: 1.2rem 1.3rem;
+        padding: 1.5rem 1.6rem;
         margin: 2px;
+    }
+    .left-box,
+    .right-box {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .small-box {
+        padding: 1.2rem 1.3rem;
+        margin: 1px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .small-box {
+        padding: 1rem 1.1rem;
+        margin: 1px;
     }
 }
