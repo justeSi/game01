@@ -52,23 +52,18 @@ document.querySelector('.start').onclick = () => {
         }
     }
     for (let i = 0; i < arr.length; i++) {
-        const b = document.createElement('figure');
-        b.className = 'small-box';
-        b.id = arr[i];
-        b.style.background = `radial-gradient(circle at 100px 100px, ${randomColor()}, ${randomColor()})`;
-        if (arr[i] < 10) {
-            b.innerHTML = '0' + arr[i];
-        } else {
-            b.innerHTML = arr[i];
-        }
-        lBox.appendChild(b);
-        b.addEventListener('click', function() {
+        const boxy = document.createElement('figure');
+        boxy.className = 'small-box';
+        boxy.id = arr[i];
+        boxy.style.background = `radial-gradient(circle at 100px 100px, ${randomColor()}, ${randomColor()})`;
+        (arr[i] < 10) ? boxy.innerHTML = '0' + arr[i]: boxy.innerHTML = arr[i];
+
+        lBox.appendChild(boxy);
+        boxy.addEventListener('click', function() {
             console.log(Math.min(...arr))
-            if (Math.min(...arr) === parseInt(b.id)) {
-                console.log(b.id)
-                rBox.appendChild(b);
-                arr = arr.filter(item => item !== parseInt(b.id))
-                console.log(arr)
+            if (Math.min(...arr) === parseInt(boxy.id)) {
+                rBox.appendChild(boxy);
+                arr = arr.filter(item => item !== parseInt(boxy.id))
                 Math.min(...arr);
                 console.log(arr.length)
                 document.querySelector('.msg').innerText = '';
