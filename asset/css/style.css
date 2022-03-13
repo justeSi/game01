@@ -136,14 +136,7 @@ button {
     }
 }
 
-@media screen and (max-width: 450px) {
-    .small-box {
-        padding: 1rem 1.1rem;
-        margin: 1px;
-    }
-}
-
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 540px) {
     .timer {
         margin-top: 1px;
         margin-bottom: 1px;
