@@ -142,3 +142,31 @@ button {
         margin: 1px;
     }
 }
+
+@media screen and (max-width: 450px) {
+    .timer {
+        margin-top: 1px;
+        margin-bottom: 1px;
+        font-size: 1.5rem;
+    }
+    .small-box {
+        padding: .6rem .7rem;
+    }
+    .box {
+        min-height: 250px;
+        margin: 1rem;
+    }
+    .start,
+    .reset {
+        margin-top: 0;
+        font-size: 15px;
+        padding: 7px 10px 7px 10px;
+    }
+    .msg {
+        font-size: 1rem;
+        margin: 5px 0 3px 0;
+    }
+    .small-box:hover {
+        border: none;
+    }
+}
