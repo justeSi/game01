@@ -28,8 +28,8 @@ const clearBoxes = (box) => {
 
 const setTime = () => {
     ++totalSeconds;
-    sec.innerHTML = pad(totalSeconds % 60);
-    min.innerHTML = pad(parseInt(totalSeconds / 60)) + ':';
+    sec.innerText = pad(totalSeconds % 60);
+    min.innerText = pad(parseInt(totalSeconds / 60)) + ':';
 }
 
 const pad = (val) => {
@@ -56,7 +56,7 @@ document.querySelector('.start').onclick = () => {
         boxy.className = 'small-box';
         boxy.id = arr[i];
         boxy.style.background = `radial-gradient(circle at 100px 100px, ${randomColor()}, ${randomColor()})`;
-        (arr[i] < 10) ? boxy.innerHTML = '0' + arr[i]: boxy.innerHTML = arr[i];
+        (arr[i] < 10) ? boxy.innerText = '0' + arr[i]: boxy.innerText = arr[i];
 
         lBox.appendChild(boxy);
         boxy.addEventListener('click', function() {
@@ -68,6 +68,7 @@ document.querySelector('.start').onclick = () => {
                 console.log(arr.length)
                 document.querySelector('.msg').innerText = '';
                 if (arr.length === 0) {
+                    document.querySelector('.msg').style.color = "green";
                     document.querySelector('.msg').innerText = `Nice JOB!!!`;
                     clearInterval(timer);
 
