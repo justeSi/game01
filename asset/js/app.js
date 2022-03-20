@@ -90,6 +90,6 @@ document.querySelector('.reset').onclick = () => {
     clearBoxes(rBox);
     clearInterval(timer);
     totalSeconds = 0;
-    sec.innerHTML = '00';
-    min.innerHTML = '00' + ':';
+    sec.innerText = '00';
+    min.innerText = '00' + ':';
 }
