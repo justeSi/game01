@@ -1,8 +1,8 @@
-let lBox = document.querySelector('.left-box');
-let rBox = document.querySelector('.right-box');
+const lBox = document.querySelector('.left-box');
+const rBox = document.querySelector('.right-box');
+const sec = document.getElementById('sec');
+const min = document.getElementById('min');
 let arr = [];
-let sec = document.getElementById('sec');
-let min = document.getElementById('min');
 let totalSeconds = 0;
 let timer = 0;
 
@@ -60,21 +60,23 @@ document.querySelector('.start').onclick = () => {
 
         lBox.appendChild(boxy);
         boxy.addEventListener('click', function() {
-            console.log(Math.min(...arr))
             if (Math.min(...arr) === parseInt(boxy.id)) {
                 rBox.appendChild(boxy);
                 arr = arr.filter(item => item !== parseInt(boxy.id))
                 Math.min(...arr);
-                console.log(arr.length)
                 document.querySelector('.msg').innerText = '';
                 if (arr.length === 0) {
                     document.querySelector('.msg').style.color = "green";
                     document.querySelector('.msg').innerText = `Nice JOB!!!`;
                     clearInterval(timer);
-
                 }
             } else if (arr.indexOf(parseInt(boxy.id)) !== -1) {
                 document.querySelector('.msg').innerText = `Wrong number. You need to find ${Math.min(...arr)}`;
+            }
+            if (arr.length !== 0) {
+                for (let i = lBox.children.length; i >= 0; i--) {
+                    lBox.appendChild(lBox.children[Math.random() * i | 0]);
+                }
             }
         });
     }
